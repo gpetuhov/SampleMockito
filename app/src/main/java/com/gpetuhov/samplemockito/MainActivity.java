@@ -1,24 +1,30 @@
 package com.gpetuhov.samplemockito;
 
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
-import javax.inject.Inject;
+import com.gpetuhov.samplemockito.utils.PrefsUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Inject SharedPreferences sharedPreferences;
+    private PrefsUtils prefsUtils;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SampleMockitoApp.getDataComponent().inject( this );
+        prefsUtils = new PrefsUtils();
 
-        // TODO: Add some class that injects shared prefs and uses them for something
-        // TODO: this will be class for testing
+        prefsUtils.setText( "Some text bla bla bla" );
+
+        textView = findViewById( R.id.textview );
+
+        textView.setText( prefsUtils.getText() );
+
+        // TODO: Test PrefUtils
         // TODO: Shared prefs must be mocked with Mockito
     }
 }
