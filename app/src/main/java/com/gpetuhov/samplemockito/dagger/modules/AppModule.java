@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import com.gpetuhov.samplemockito.SampleMockitoApp;
 import com.gpetuhov.samplemockito.dagger.scopes.DataScope;
+import com.gpetuhov.samplemockito.utils.PrefsUtils;
 
 import dagger.Module;
 import dagger.Provides;
@@ -22,5 +23,11 @@ public class AppModule {
     @DataScope
     SharedPreferences providesPrefs(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context);
+    }
+
+    @Provides
+    @DataScope
+    PrefsUtils providesPrefsUtils() {
+        return new PrefsUtils();
     }
 }

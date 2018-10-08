@@ -14,10 +14,7 @@ class SampleMockitoApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         application = this
-
-        dataComponent = DaggerDataComponent.builder()
-                .build()
+        dataComponent = DaggerDataComponent.builder().build()
     }
 }
