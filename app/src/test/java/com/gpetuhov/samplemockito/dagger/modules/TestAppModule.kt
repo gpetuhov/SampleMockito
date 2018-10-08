@@ -1,6 +1,7 @@
 package com.gpetuhov.samplemockito.dagger.modules
 
 import android.content.SharedPreferences
+import com.gpetuhov.samplemockito.PrefsUtilsTest
 import com.gpetuhov.samplemockito.dagger.scopes.DataScope
 import com.gpetuhov.samplemockito.utils.PrefsUtils
 import dagger.Module
@@ -13,10 +14,6 @@ import org.mockito.Mockito
 @Module
 class TestAppModule {
 
-    companion object {
-        const val DUMMY_TEXT = "Dummy text"
-    }
-
     @Provides
     @DataScope
     fun providesPrefs(): SharedPreferences {
@@ -25,7 +22,7 @@ class TestAppModule {
         val editor = Mockito.mock(SharedPreferences.Editor::class.java)
 
         Mockito.`when`(sharedPreferences.getString(PrefsUtils.TEXT_KEY, PrefsUtils.DEFAULT_TEXT))
-                .thenReturn(DUMMY_TEXT)
+                .thenReturn(PrefsUtilsTest.DUMMY_TEXT)
 
         Mockito.`when`(sharedPreferences.edit()).thenReturn(editor)
         Mockito.`when`(editor.putString(any(String::class.java), any(String::class.java))).thenReturn(editor)
