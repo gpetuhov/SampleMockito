@@ -15,7 +15,7 @@ public class AppModule {
     @Provides
     @DataScope
     Context providesContext() {
-        return SampleMockitoApp.getApplication().getApplicationContext();
+        return SampleMockitoApp.application.getApplicationContext();
     }
 
     @Provides

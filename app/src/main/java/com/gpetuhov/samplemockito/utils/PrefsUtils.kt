@@ -16,7 +16,7 @@ class PrefsUtils {
     }
 
     init {
-        SampleMockitoApp.getDataComponent().inject(this)
+        SampleMockitoApp.dataComponent.inject(this)
     }
 
     @Inject
