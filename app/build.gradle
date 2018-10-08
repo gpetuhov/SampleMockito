@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.gpetuhov.android.sampletoothpick"
+        applicationId "com.gpetuhov.samplemockito"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
@@ -46,6 +46,7 @@ dependencies {
     // Dagger
     implementation 'com.google.dagger:dagger:2.11'
     kapt 'com.google.dagger:dagger-compiler:2.11'
+    kaptTest 'com.google.dagger:dagger-compiler:2.11'
 
     // Mockito
     testImplementation "org.mockito:mockito-core:2.22.0"
