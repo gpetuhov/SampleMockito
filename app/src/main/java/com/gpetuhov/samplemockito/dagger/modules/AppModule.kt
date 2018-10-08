@@ -15,19 +15,19 @@ import dagger.Provides
 class AppModule {
     @Provides
     @DataScope
-    internal fun providesContext(): Context {
+    fun providesContext(): Context {
         return SampleMockitoApp.application.applicationContext
     }
 
     @Provides
     @DataScope
-    internal fun providesPrefs(context: Context): SharedPreferences {
+    fun providesPrefs(context: Context): SharedPreferences {
         return PreferenceManager.getDefaultSharedPreferences(context)
     }
 
     @Provides
     @DataScope
-    internal fun providesPrefsUtils(): PrefsUtils {
+    fun providesPrefsUtils(): PrefsUtils {
         return PrefsUtils()
     }
 }

@@ -7,7 +7,7 @@ import com.gpetuhov.samplemockito.utils.PrefsUtils
 
 import dagger.Component
 
-@Component(modules = arrayOf(AppModule::class))
+@Component(modules = [AppModule::class])
 @DataScope
 interface DataComponent {
     fun inject(prefsUtils: PrefsUtils)
