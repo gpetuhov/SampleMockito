@@ -11,8 +11,8 @@ import javax.inject.Inject
 class PrefsUtils(private val sharedPreferences: SharedPreferences) {
 
     companion object {
-        private const val TEXT_KEY = "text_key"
-        private const val DEFAULT_TEXT = "default_text"
+        const val TEXT_KEY = "text_key"
+        const val DEFAULT_TEXT = "default_text"
     }
 
     var text: String?
