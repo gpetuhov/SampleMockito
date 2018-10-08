@@ -1,10 +1,11 @@
 package com.gpetuhov.samplemockito;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.gpetuhov.samplemockito.utils.PrefsUtils;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
